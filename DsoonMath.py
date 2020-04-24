@@ -1,26 +1,30 @@
 # -*- coding: utf-8 -*-
-from math import *
+#!/usr/bin/env python 
+
+#import math
+#math lib is for add trigonometric funtions and log functions 
 import random
-import numpy as np
 from pseudorandom import prandom
 from datetime import datetime
 import time
+#p() is fast debug print i use for see error in a big log of errors 
 def p(*args):
 	for i in args:
 		print("\n",i,"\n")
 def	basicoperators(rand = random.randrange(0,4)):
 	choise = rand
-	if choise== 4:
-		operator="%"
-	elif choise== 3:
-		operator="/"
-	elif choise== 2:
-		operator="*"
+	if choise== 0:
+		operator="+"
 	elif choise== 1:
 		operator="-"
-	elif choise== 0:
-		operator="+"
+	elif choise== 2:
+		operator="*"
+	elif choise== 3:
+		operator="/"
+	elif choise== 4:
+		operator="%"
 	return str(operator)
+# reason why return the operator as string because will go through the function eval or be print with a number
 def avasedoperators(rand = random.randrange(1,4)):
 	choise = rand
 	lim =15
@@ -29,25 +33,36 @@ def avasedoperators(rand = random.randrange(1,4)):
 	elif choise== 1:
 		operator="**(1/2)"
 	elif choise== 2:
-		operator="**("+str(random.randrange(-lim,lim))+")"
+		operator="**(2)"
 	elif choise== 3:
 		operator="**("+str(random.randrange(-lim,lim))+"/"+str(random.randrange(-lim,lim))+")"
 	if choise== 4:
-		operator="**(2)"
+		operator="**("+str(random.randrange(-lim,lim))+")"
 	return str(operator)
-def operators(rand = random.randrange(0,1),difcult  = random.randrange(1,3)):
+def operators(rand = random.randrange(0,1),difcult  = random.randrange(1,4)):
 	operator = "+"
 	choise = rand
-	if difcult == 1:
+
+
+	if difcult == 1 or  difcult == 0 :
 		operatorB = 1
-		operatorA = 4
+		operatorA = 1
 		choise = 0
+
 	elif difcult == 2:
-		operatorB = 4
-		operatorA = 4
+		operatorB = 5
+		operatorA = 1
+		choise = 0
+
+	elif difcult == 3:
+		operatorB = 5
+		operatorA = 3
+		choise = 1
+
 	else:# difcult == 3:
-		operatorB = 4
-		operatorA = 4
+		operatorB = 5
+		operatorA = 5
+		choise = 1
 	if choise == 0:
 		operator = basicoperators(random.randrange(0,operatorB))
 	elif choise == 1:
@@ -56,12 +71,14 @@ def operators(rand = random.randrange(0,1),difcult  = random.randrange(1,3)):
 def typenum(rand= random.randrange(0,10),difcult  = random.randrange(1,3),limt = 9999):
 	typenum = 0
 	choise = rand
-	if difcult == 1:
-		choise = random.randrange(0,2)
+	if difcult == 0:
+		choise = 0
+	elif difcult == 1:
+		choise = random.randrange(0,3)
 	elif difcult == 2:
-		choise = random.randrange(0,5)
+		choise = random.randrange(0,6)
 	elif difcult == 3:
-		choise = random.randrange(0,13)
+		choise = random.randrange(0,14)
 	elif difcult == 4:
 		choise = random.randrange(0,20)
 	
@@ -117,15 +134,22 @@ def typenum(rand= random.randrange(0,10),difcult  = random.randrange(1,3),limt =
 	elif choise== 19:
 		typenum = str(random.randint(-limt,limt))+"*y"
 	return str(typenum) 
+"""
+import numpy as np
 def arrays(rand = random.randrange(0,6)):
 	if choise== 7:
 		typenum = np.random.randint(limt, size=(3,3))
-
+#disabled for now for future parts of the project
+"""
 def quantity(levelop= 2,leveDt=1,limt=9999):
 	if levelop > 4 :
 		levelop = 4
+
 	for level in [levelop,leveDt]:
-		if level == 1:
+		if level == 0:
+			optionypenums = 0
+			rand = 2
+		elif level == 1:
 			optionypenums = 4
 			rand = random.randrange(2,3)
 		elif level == 2:
@@ -144,13 +168,13 @@ def quantity(levelop= 2,leveDt=1,limt=9999):
 
 	for i,selctnum,optionypenums in zip(range(rand),listpsdtnum,listop):
 		if i == 0:
-			operation += typenum(selctnum,level,limt)
+			operation += typenum(selctnum,leveDt,limt)
 		else:
-			operation += operators(optionypenums,level)
-			operation += typenum(selctnum,level,limt)
+			operation += operators(optionypenums,levelop)
+			operation += typenum(selctnum,leveDt,limt)
 
 	return operation
-#unknowns = lambda a, b, c: ((-b + ((b * b) - (4 * a * c))**1/2) / (2 * a), (-b - (((b * b) - (4 * a * c)))**(1/2)) / (2 * a))
+#unknowns = lambda a, b, c: ((-b + ((b * b) - (4 * a * c))**1/2) / (2 * a), (-b - (((b * b) - (4 * a * c)))**(1/2)) / (2 * a))#is cuadraticformula is called for find unknowns in a fromula
 def answertime( limit , expresion ,Vtime):
 	for x in range(limit):
 		if Vtime == False:
@@ -167,9 +191,10 @@ def answertime( limit , expresion ,Vtime):
 	time.sleep(Vtime)
 	return answer
 def answer( limit , expresion = quantity()):
-	for i in "qwertyuiopñlkjhgfdsazxcvbnm":
+	for i in "qwertyuioplkjhgfdsazxcvbnm":
 		if i in str(expresion):
-			answer = "proximamente la solucion"
+			answer = "coming soon"
+#coming soon can solove ecuation of frist grade and second grade this is the impresión
 	else:
 		answer = str(eval(expresion))
 	return answer

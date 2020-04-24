@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+#!/usr/bin/env python 
 """ 
 m modulo 
 a multiplicador

@@ -1,14 +1,15 @@
-
-from DsoonMath import quantity ,answertime,answer
+# -*- coding: utf-8 -*-
+#!/usr/bin/env python 
+from DsoonMath import quantity ,answertime,answer, p
 import time
 limit = 999
-level = 4
-for i in range(100):
-	expresion = quantity(levelop= level,leveDt=level,limt=limit)
-	print(expresion)
-	#time.sleep(60*60*2)
-	print(answer(expresion))
-	print()
+level = 0
+for i in range(5):
+	expresion = quantity(levelop= 1,leveDt=0,limt=limit)
+	print(i,expresion)		
+	time.sleep(60*0.5)
+	p(answer(limit,expresion))
+print()
 
 
 
