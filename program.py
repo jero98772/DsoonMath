@@ -10,7 +10,3 @@ for i in range(5):
 	time.sleep(60*0.5)
 	p(answer(limit,expresion))
 print()
-
-
-
-

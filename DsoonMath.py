@@ -12,6 +12,7 @@ def p(*args):
 	for i in args:
 		print("\n",i,"\n")
 def	basicoperators(rand = random.randrange(0,4)):
+
 	choise = rand
 	if choise== 0:
 		operator="+"
@@ -31,13 +32,13 @@ def avasedoperators(rand = random.randrange(1,4)):
 	if choise== 0:
 		operator = ""
 	elif choise== 1:
-		operator="**(1/2)"
+		operator= "**(1/2)"
 	elif choise== 2:
-		operator="**(2)"
+		operator= "**(2)"
 	elif choise== 3:
-		operator="**("+str(random.randrange(-lim,lim))+"/"+str(random.randrange(-lim,lim))+")"
+		operator= "**("+str(random.randrange(-lim,lim))+"/"+str(random.randrange(-lim,lim))+")"
 	if choise== 4:
-		operator="**("+str(random.randrange(-lim,lim))+")"
+		operator= "**("+str(random.randrange(-lim,lim))+")"
 	return str(operator)
 def operators(rand = random.randrange(0,1),difcult  = random.randrange(1,4)):
 	operator = "+"
@@ -68,7 +69,7 @@ def operators(rand = random.randrange(0,1),difcult  = random.randrange(1,4)):
 	elif choise == 1:
 		operator = avasedoperators(random.randrange(0,operatorA))+basicoperators(random.randrange(0,operatorB))
 	return str(operator)
-def typenum(rand= random.randrange(0,10),difcult  = random.randrange(1,3),limt = 9999):
+def typenum(rand= random.randrange(0,10),difcult  = random.randrange(1,3),limit = 9999):
 	typenum = 0
 	choise = rand
 	if difcult == 0:
@@ -85,23 +86,23 @@ def typenum(rand= random.randrange(0,10),difcult  = random.randrange(1,3),limt =
 	#level
 	#1
 	if choise == 0:
-		typenum = random.randint(-limt,limt)
+		typenum = random.randint(-limit,limit)
 	elif choise == 1:
 		typenum = round(random.random(),3)
 	elif choise == 2:
-		typenum = round(random.randint(-limt,limt)*0.01,2)
+		typenum = round(random.randint(-limit,limit)*0.01,2)
 	#2
 	elif choise== 3:
-		typenum = bin(random.randint(-limt,limt))
+		typenum = bin(random.randint(-limit,limit))
 	elif choise== 4:
-		typenum = str(random.randint(-limt,limt))+"*x"
+		typenum = str(random.randint(-limit,limit))+"*x"
 	elif choise== 5:
-		typenum = complex(random.randint(-limt,limt))
+		typenum = complex(random.randint(-limit,limit))
 	#3
 	elif choise== 6:
-		typenum = hex(random.randint(-limt,limt))
+		typenum = hex(random.randint(-limit,limit))
 	elif choise== 7:
-		typenum = oct(random.randint(-limt,limt))
+		typenum = oct(random.randint(-limit,limit))
 	elif  choise== 8:
 		typenum = 3.14159265358979323846#pi
 
@@ -124,24 +125,24 @@ def typenum(rand= random.randrange(0,10),difcult  = random.randrange(1,3),limt =
 		typenum =1.25992104989487316476 #sqrt(2)**3
 	#4	
 	elif choise== 15:
-		typenum = str(random.randint(-limt,limt))+"x**"+str(random.randrange(0,10))
+		typenum = str(random.randint(-limit,limit))+"x**"+str(random.randrange(0,10))
 	elif choise== 16:
-		typenum = str(random.randint(-limt,limt))+"y**"+str(random.randrange(0,10))
+		typenum = str(random.randint(-limit,limit))+"y**"+str(random.randrange(0,10))
 	elif choise== 17:
-		typenum = str(random.randint(-limt,limt))+"*z"
+		typenum = str(random.randint(-limit,limit))+"*z"
 	elif choise== 18:
-		typenum = str(random.randint(-limt,limt))+"z**"+str(random.randrange(0,10))
+		typenum = str(random.randint(-limit,limit))+"z**"+str(random.randrange(0,10))
 	elif choise== 19:
-		typenum = str(random.randint(-limt,limt))+"*y"
+		typenum = str(random.randint(-limit,limit))+"*y"
 	return str(typenum) 
 """
 import numpy as np
 def arrays(rand = random.randrange(0,6)):
 	if choise== 7:
-		typenum = np.random.randint(limt, size=(3,3))
+		typenum = np.random.randint(limit, size=(3,3))
 #disabled for now for future parts of the project
 """
-def quantity(levelop= 2,leveDt=1,limt=9999):
+def quantity(levelop= 2,leveDt=1,limit=9999):
 	if levelop > 4 :
 		levelop = 4
 
@@ -168,10 +169,10 @@ def quantity(levelop= 2,leveDt=1,limt=9999):
 
 	for i,selctnum,optionypenums in zip(range(rand),listpsdtnum,listop):
 		if i == 0:
-			operation += typenum(selctnum,leveDt,limt)
+			operation += typenum(selctnum,difcult = leveDt,limit=limit)
 		else:
 			operation += operators(optionypenums,levelop)
-			operation += typenum(selctnum,leveDt,limt)
+			operation += typenum(selctnum,difcult = leveDt,limit=limit)
 
 	return operation
 #unknowns = lambda a, b, c: ((-b + ((b * b) - (4 * a * c))**1/2) / (2 * a), (-b - (((b * b) - (4 * a * c)))**(1/2)) / (2 * a))#is cuadraticformula is called for find unknowns in a fromula
@@ -190,11 +191,11 @@ def answertime( limit , expresion ,Vtime):
 	answer = str(eval(expresion))
 	time.sleep(Vtime)
 	return answer
-def answer( limit , expresion = quantity()):
-	for i in "qwertyuioplkjhgfdsazxcvbnm":
-		if i in str(expresion):
-			answer = "coming soon"
-#coming soon can solove ecuation of frist grade and second grade this is the impresión
-	else:
+def answer(  expresion = quantity()):
+	try:
 		answer = str(eval(expresion))
+	except :
+		answer = "coming soon"
+#coming soon can solove ecuation of frist grade and second grade this is the impresión
+
 	return answer
