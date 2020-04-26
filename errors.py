@@ -24,15 +24,16 @@ def partexpresion(expresion):
 	p("numpos"+str(numspos),"num"+str(nums),"signspos"+str(signspos),"signs"+str(signs),expresion)
 	#return 
 def error(expresion, answer):
-	if "coming soon" != answer:
-		
+	#try:
 		answer = eval(answer)
+		expresion = eval(expresion)
 		S_answer = str(eval(str(answer)))
 		S_expresion = str(eval(str(expresion)))
-		partexpresion(str(expresion))
+		#partexpresion(str(expresion))
 		if S_expresion !=  S_answer:
 			signerrorP = answer*1
 			signerrorM = answer*-1
+
 			if expresion == signerrorM or signerrorP == expresion:
 				teori = """
 	you have a error in sign 
@@ -47,13 +48,22 @@ def error(expresion, answer):
 	- (*) + = -
 	+ (*) - = - 
 	"""
+				return teori
 			#elif
 		else:
 			teori = "dont have corrections"
-		return teori
-	else :
-		teori = "you are test not developed levels if you need solution can test lower levels"
-		return teori
-
+			return teori
+	#except:
+		#teori = "you are test not developed levels if you need solution can test lower levels"
+		#return teori
+def help():
+	mesage="""
+			fabs = is asbsolute value is a equivalent math operator |x|
+			log1p(x) =  natural logarithm of 1+x
+			hypot = sqrt(x*x + y*y)
+			cos = cos() funtion
+			sin = sin() funtion
+			tan = tan() funtion
+			"""
 
 	
