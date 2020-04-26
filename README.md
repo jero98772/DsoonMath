@@ -27,5 +27,7 @@ level max sometimes it has no solution or is infinite for this problem crete a f
 	
 min level()
 	configuration ---> expresion = quantity(levelop= 0 ,leveDt=0 ,limit=99)
-	0 ) -20+45
+
+    0 ) -20+45
+
 #how it works
