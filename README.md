@@ -5,17 +5,17 @@ DsoonMath is a math quiz generator with various difficulties options and operato
 	python exercises.py > exercises.txt
 
 for generate a lot of  exercises
-#what is it
+# what is it
 is a generator of math problems from levels elections can increase the problem with function quantity() select the level and quantity select the size of problem with parameters can chioise the dificult  
      
- levelop is the  paremeter for  level for operators have math functions(log's,trigonometric functions ,angular functions,hyperbolic functions, hypotenuse ,absulute value), "+","-","*","/","%", "**", "(1/2)" , "**(2)","**(x)","**(m/n)"etc...
+ levelop is the  paremeter for  level for operators have math functions(log's,trigonometric functions ,angular functions,hyperbolic functions, hypotenuse ,absulute value), "+","-","*","/","%", "^", "√" , "^ (2)","^(x)","√ or ^ (m/n)"etc...
 
  	["+","-","*","/","%","**","(1/2)","**(2)","cos","tan","sin","acos","atan","asin","cosh","tanh","sinh","atan2","hypot","degrees","fabs"]
  
- leveDt  # paremeter for level of data types is digitis dont have only level with positive data tipes (why if you have level for use this program have level for subtract) and have , the 
+ leveDt = paremeter for level of data types is digitis dont have only level with positive data tipes (why if you have level for use this program have level for subtract) and have , the 
  leveDt=4 include const ,ints ,complex, floats,binary,hex,octals,polynomialsetc, polynomials with diferent pow
  
- limit #  paremeter for limit is quantity of digitis
+ limit =  paremeter for limit is quantity of digitis
      quantity(levelop= 2,leveDt=1,limit=9999)
 ###exaple of levels
 level max sometimes it has no solution or is infinite for this problem crete a funtion
@@ -30,4 +30,3 @@ min level()
 
     0 ) -20+45
 
-#how it works
