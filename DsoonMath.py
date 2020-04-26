@@ -2,10 +2,12 @@
 #!/usr/bin/env python 
 
 from  math import * 
-#math lib is for add trigonometric funtions and log functions 
+#math lib is for add trigonometric funtions and others math functions log abslote value etc.. 
 import random
-from pseudorandom import prandom
+from pseudorandom import prandom 
+# is for load random numbers as opcions
 from datetime import datetime
+# is for generate random state in  prandom for not repite the same number
 import time
 #p() is fast debug print i use for see error in a big log of errors 
 def p(*args):
@@ -14,8 +16,7 @@ def p(*args):
 def typenum(rand= random.randrange(0,20),difcult  = random.randrange(1,3),limit = 9999):
 	typenum = 0
 	choise = rand
-	if difcult == "0":
-		pass
+	if difcult == "0":pass # this if you need pas option i use in operator as 0 int for need  and  assign to return nothing for add more easy operators
 	elif difcult == 0:
 		choise = 0
 	elif difcult == 1:
@@ -98,9 +99,9 @@ def	basicoperators(rand = random.randrange(0,4)):
 def avasedoperators(rand = random.randrange(1,6)):
 	choise = rand
 	lim =15
-	limit = 9999
+	limit = 99
 	if choise== 0:
-		operator = ""# this is for dont mix basic and anvanseds operators
+		operator = ""# this is for dont mix basic and anvanseds operators and assign to return nothing for add more easy operators
 	elif choise== 1:
 		operator= "**(1/2)"#this is other form to represet sqrt root 1 is pow and 2 is the root 
 	elif choise== 2:
@@ -161,7 +162,7 @@ def avasedfunctions(rand = random.randrange(0,15)):
 		operator= "atanh("+str(typenum(difcult  =0,limit = limit))+")"
 
 	return str(operator)
-def operators(rand = random.randrange(0,10),difcult  = random.randrange(1,4)):
+def Fandoperators(rand = random.randrange(0,10),difcult  = random.randrange(1,4)):
 	operator = "+"
 	choise = rand
 	choiseEXCLUSIVE = 3
@@ -245,7 +246,7 @@ def operators(rand = random.randrange(0,10),difcult  = random.randrange(1,4)):
 	elif choise == 3 :	
 		operator = avasedoperators(random.randrange(1,operatorA))+basicoperators(random.randrange(0,operatorB))+mathfunctions(random.randrange(0,operatorFB))+basicoperators(random.randrange(0,operatorB))
 	elif choise == 4:#"simplyfie1":
-		operator = basicoperators(random.randrange(0,operatorB))+avasedfunctions(random.randrange(0,operatorFA))+basicoperators(random.randrange(0,operatorB))	
+		operator = basicoperators(random.randrange(0,operatorB))+avasedfunctions(random.randrange(0,operatorFA))+basicoperators(random.randrange(0,operatorB))+avasedoperators(random.randrange(1,operatorA))+basicoperators(random.randrange(0,operatorB))+mathfunctions(random.randrange(0,operatorFB))+basicoperators(random.randrange(0,operatorB))
 	elif choise ==5:#"simplyfie2":
 		operator = basicoperators(random.randrange(2,3))
 	elif choise ==6:
@@ -288,7 +289,7 @@ def quantity(levelop= 2,leveDt=1,limit=9999):
 		if i == 0:
 			operation += typenum(selctnum,difcult = leveDt,limit=limit)
 		else:
-			operation += operators(optionypenums,difcult =levelop)
+			operation += Fandoperators(optionypenums,difcult =levelop)
 			operation += typenum(selctnum,difcult = leveDt,limit=limit)
 
 	return operation
@@ -308,7 +309,7 @@ def answertime( limit , expresion ,Vtime):
 	answer = str(eval(expresion))
 	time.sleep(Vtime)
 	return answer
-def answer(  expresion = quantity()):
+def answer():
 	try:
 		answer = str(eval(expresion))
 	except :
@@ -352,7 +353,7 @@ def simplyfie(level,limit = 999):
 		if i == 0:
 			operation += typenum(selctnum,difcult = leveDt,limit=limit)
 		else:
-			operation += operators(optionypenums,difcult = levelop)
+			operation += Fandoperators(optionypenums,difcult = levelop)
 			operation += typenum(selctnum,difcult = leveDt,limit=limit)
 
 	return operation
@@ -372,7 +373,7 @@ def partexpresion(expresion):
 	signspos = []
 	signs = []
 	expresion = list(expresion)
-	knownsigns = ["+","-","*","/","%","**","(1/2)","**(2)"]
+	knownsigns = ["+","-","*","/","%","**","(1/2)","**(2)","cos","tan","sin","acos","atan","asin","cosh","tanh","sinh","atan2","hypot","degrees","fabs"]
 	numbersb10 = [str(b10) for b10 in range(10)]
 	for parts in expresion:
 		for sign,numberb10 in zip(knownsigns,numbersb10):
@@ -417,6 +418,9 @@ def error(expresion, answer):
 	"""
 				return teori
 			#elif
+			return """
+			can round with round(answer,float digits to round) 
+			"""
 		else:
 			teori = "dont have corrections"
 			return teori
@@ -424,7 +428,7 @@ def error(expresion, answer):
 		#teori = "you are test not developed levels if you need solution can test lower levels"
 		#return teori
 def help():
-	mesage="""
+	mesage = """
 			fabs = is asbsolute value is a equivalent math operator |x|
 			log1p(x) =  natural logarithm of 1+x
 			hypot = sqrt(x*x + y*y)
@@ -432,5 +436,6 @@ def help():
 			sin = sin() funtion
 			tan = tan() funtion
 			"""
-
+def setsH():
+	mesage =""" set1.union(set2) or set1 | set2 = set1 U set2 , set1 union set2 """
 	

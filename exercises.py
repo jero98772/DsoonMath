@@ -75,15 +75,15 @@ def varius():
 
 	for i in liste:
 		p(i)
-def spcecifie():
+def spcecifie(levelop= 0 ,leveDt= 1):
 	limit = 999
 	liste =[]
 	i = 0
 	lm = 21
 	expresion = 0
 	for j in range(lm):
-		expresion = quantity(levelop= 0 ,leveDt= 1,limit= limit)
-		liste.append(str(j)+" level :expert-9")
+		expresion = quantity(levelop= levelop ,leveDt= leveDt,limit= limit)
+		liste.append(str(j)+" level :")
 		liste.append(expresion)
 	for i in liste:
 		p(i)
@@ -92,12 +92,12 @@ def inputprogram():
 	
 	limit = 99
 	level = 5
-	for i in range(5):
-		expresion = quantity(levelop= 7,leveDt=4,limit=limit)
+	for i in range(10):
+		expresion = quantity(levelop= 5,leveDt=3,limit=limit)
 		print(i,expresion)		
 		#time.sleep(60*0.4)
 		#p("time")
-		#p(error(input(), answer(expresion)))
+		p(error(input(), answer(expresion)))
 		p(answer(expresion))
 	print()
 def timeprogram():
@@ -123,5 +123,28 @@ def spcecifieexcerises():
 		#p("time")
 		#p(error(input(), answer(expresion)))
 		p(answer(expresion))
-inputprogram()
-spcecifieexcerises()
+def sets():
+	x = {type(1.0)}
+	aSets = { type(1),type(1.0),type(1j),type(0b011010101)}
+	print(x.union(aSets))
+	print(x | aSets)
+#sets()
+	
+#inputprogram()
+#spcecifieexcerises()
+def test():
+	
+	limit = 99
+	#level = eval(input("level"))
+	for i in range(10):
+		expresion = quantity(levelop= 3 ,leveDt=0 ,limit=limit)
+		print(i,")",expresion)		
+		#time.sleep(60*0.4)
+		#p("time")
+		#p(error(input(), answer(expresion)))
+		#p(answer(expresion))
+	print()
+#timeprogram()
+#inputprogram()
+#test()
+spcecifie(int(input("levelop:  ")),int(input("levelDT: ")))
