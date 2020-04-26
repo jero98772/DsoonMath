@@ -1,10 +1,14 @@
 # DsoonMath
 DsoonMath is a math quiz generator with various difficulties options and operators includes the solution  
-
-
-	python exercises.py > exercises.txt
-
 for generate a lot of  exercises
+
+	 python exercise.py 
+	 
+if you are in linux and you want to create a list with problems
+	 
+	python lot_of_exercises.py > lot_of_exercises.txt
+
+
 # what is it
 is a generator of math problems from levels elections can increase the problem with function quantity() select the level and quantity select the size of problem with parameters can chioise the dificult  
      
@@ -29,4 +33,3 @@ min level()
 	configuration ---> expresion = quantity(levelop= 0 ,leveDt=0 ,limit=99)
 
     0 ) -20+45
-

@@ -75,7 +75,7 @@ def varius():
 
 	for i in liste:
 		p(i)
-def spcecifie(levelop= 0 ,leveDt= 1):
+def spcecifie(levelop= 0 ,leveDt= 1,limit= 999):
 	limit = 999
 	liste =[]
 	i = 0
@@ -147,4 +147,3 @@ def test():
 #timeprogram()
 #inputprogram()
 #test()
-spcecifie(int(input("levelop:  ")),int(input("levelDT: ")))
