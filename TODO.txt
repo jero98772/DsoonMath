@@ -1,0 +1,14 @@
+documentate
+-- readme
+-- coments
+finish operators and fucntions
+modalites 
+-- add factorisations
+-- geometry
+-- add ecuations = ecuatios
+-- add inecuation 
+-- linear ecuations
+verifite datatypes
+solutions
+telegrambot
+
