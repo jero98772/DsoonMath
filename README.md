@@ -1,5 +1,6 @@
-# DsoonMath
 
+# telegram @Ds00nMathbot
+# DsoonMath
 DsoonMath is a math quiz generator with various difficulties options and operators includes the solution  
 for generate a lot of  exercises
 
@@ -9,8 +10,6 @@ if you are in linux and you want to create a list with problems
 	 
 	python lot_of_exercises.py > lot_of_exercises.txt
 
-# telegram @Ds00nMathbot
-you need send 0 to start
 
 # what is it
 is a generator of math problems from levels elections can increase the problem with function quantity() select the level and quantity select the size of problem with parameters can chioise the dificult  
@@ -36,3 +35,9 @@ min level()
 	configuration ---> expresion = quantity(levelop= 0 ,leveDt=0 ,limit=99)
 
     0 ) -20+45
+### contribute
+donation
+	
+	-  Bitcoin: tb1qgt4trnnsxdmfcpnydkmk8ht0y4esg4cdvzmhaz
+
+or make doing something from the TODO list
