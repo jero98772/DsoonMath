@@ -294,7 +294,7 @@ def quantity(levelop= 2,leveDt=1,limit=9999):
 
 	return operation
 #unknowns = lambda a, b, c: ((-b + ((b * b) - (4 * a * c))**1/2) / (2 * a), (-b - (((b * b) - (4 * a * c)))**(1/2)) / (2 * a))#is cuadraticformula is called for find unknowns in a fromula
-def answertime( limit , expresion ,Vtime):
+def answertime( expresion ,Vtime):
 	for x in range(limit):
 		if Vtime == False:
 			Vtime = limit*len(str(limit))	
@@ -309,7 +309,7 @@ def answertime( limit , expresion ,Vtime):
 	answer = str(eval(expresion))
 	time.sleep(Vtime)
 	return answer
-def answer():
+def answer(expresion):
 	try:
 		answer = str(eval(expresion))
 	except :

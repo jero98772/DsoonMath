@@ -2,6 +2,8 @@
 #!/usr/bin/env python 
 from DsoonMath import quantity ,answertime,answer, p, error,simplyfie
 import time
+import random
+
 
 def varius():
 	limit = 999
@@ -75,6 +77,7 @@ def varius():
 
 	for i in liste:
 		p(i)
+	return varius
 def spcecifie(levelop= 0 ,leveDt= 1,limit= 999):
 	limit = 999
 	liste =[]
@@ -87,7 +90,7 @@ def spcecifie(levelop= 0 ,leveDt= 1,limit= 999):
 		liste.append(expresion)
 	for i in liste:
 		p(i)
-#varius()
+	return liste
 def inputprogram():
 	
 	limit = 99
@@ -95,8 +98,7 @@ def inputprogram():
 	for i in range(10):
 		expresion = quantity(levelop= 5,leveDt=3,limit=limit)
 		print(i,expresion)		
-		#time.sleep(60*0.4)
-		#p("time")
+
 		p(error(input(), answer(expresion)))
 		p(answer(expresion))
 	print()
@@ -108,8 +110,6 @@ def timeprogram():
 		expresion = quantity(levelop= 0,leveDt=1,limit=limit)
 		print(i,expresion)		
 		time.sleep(60*0.4)
-		#p("time")
-		#p(error(input(), answer(expresion)))
 		p(answer(expresion))
 	print()
 def spcecifieexcerises():
@@ -119,31 +119,24 @@ def spcecifieexcerises():
 	for i in range(5):
 		expresion = simplyfie(level=level,limit=limit)
 		print(i,expresion)		
-		#time.sleep(60*0.4)
-		#p("time")
-		#p(error(input(), answer(expresion)))
 		p(answer(expresion))
 def sets():
 	x = {type(1.0)}
 	aSets = { type(1),type(1.0),type(1j),type(0b011010101)}
 	print(x.union(aSets))
 	print(x | aSets)
-#sets()
-	
-#inputprogram()
-#spcecifieexcerises()
+
 def test():
 	
 	limit = 99
-	#level = eval(input("level"))
 	for i in range(10):
 		expresion = quantity(levelop= 3 ,leveDt=0 ,limit=limit)
 		print(i,")",expresion)		
-		#time.sleep(60*0.4)
-		#p("time")
-		#p(error(input(), answer(expresion)))
-		#p(answer(expresion))
+
 	print()
-#timeprogram()
-#inputprogram()
-#test()
+def mix():
+	limit =9* (10*random.randrange(0,10))
+
+	expresion = quantity(levelop= random.randrange(0,9) ,leveDt=random.randrange(0,4) ,limit=limit)
+	print(expresion)
+	return expresion

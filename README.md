@@ -33,3 +33,9 @@ min level()
 	configuration ---> expresion = quantity(levelop= 0 ,leveDt=0 ,limit=99)
 
     0 ) -20+45
+### contribute
+donation
+	
+	-  Bitcoin: tb1qgt4trnnsxdmfcpnydkmk8ht0y4esg4cdvzmhaz
+
+or make doing something from the TODO list
