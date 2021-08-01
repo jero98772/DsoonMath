@@ -34,8 +34,5 @@ min level()
 
     0 ) -20+45
 ### contribute
-donation
-	
-	-  Bitcoin: bc1qf3eh6ssgzw2t3qyjk2gzwuskq4ctfk8375fg3r
 
-or make doing something from the TODO list
+make something from the TODO list
